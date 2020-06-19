@@ -1,0 +1,39 @@
+{
+  "name": "hyperia-commitizer",
+  "version": "1.0.0",
+  "description": "A commitizen adapter for Jira smart commits",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperia-sk/hyperia-commitizer.git"
+  },
+  "keywords": [
+    "commitizen",
+    "commitizen adapter",
+    "jira",
+    "jira smart commit",
+    "hyperia"
+  ],
+  "author": "Ing. Ivan Kostolný <ivan.kostolny@hyperia.sk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyperia-sk/hyperia-commitizer/issues"
+  },
+  "homepage": "https://github.com/hyperia-sk/hyperia-commitizer",
+  "devDependencies": {
+    "babel": "5.8.21",
+    "chai": "3.2.0",
+    "mocha": "2.2.5",
+    "nodemon": "1.4.0",
+    "proxyquire": "^1.7.10",
+    "sinon": "1.15.4",
+    "sinon-chai": "2.8.0",
+    "with-package": "0.2.0"
+  },
+  "dependencies": {
+    "inquirer": "^7.2.0",
+    "git-branch": "^2.0.1",
+    "commitizen": "^4.1.2",
+    "simple-git": "^2.7.2"
+  }
+}
