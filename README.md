@@ -19,14 +19,14 @@ chmod +x install.sh
 Install this adapter
 
 ```
-npm install hyperia-commitizer
+npm i @hyperia/hyperia-commitizer
 ```
 
 ## Create `.cz.json`
 
 ```json
 {
-  "path": "node_modules/hyperia-commitizer"
+  "path": "node_modules/@hyperia/hyperia-commitizer"
 }
 ```
 
