@@ -41,16 +41,15 @@ npm i @hyperia/hyperia-commitizer
 after run:  
 1. run auto command: `git add -A`  
 2. questions:  
-
- - **<list (type)>**: _Type of operation:_ `['task', 'bug', 'fix', 'update', 'merging', 'test', 'refactoring', 'experiment']`  
- - **<list (from)>**: _Where did you come from?:_ `['develop', 'beta', 'rc-branch', 'master', 'other']`  
-   - if **(from == other)**:  **<input (fromManual)>**: _Name of the parent branch:_  
- - **<input (workflow)>**: _Job description:_   
-- **<list (pushing)>**: _Do you want to PUSH automatically?_ `['yes','no']`  
+    - **<list (type)>**: _Type of operation:_ `['task', 'bug', 'fix', 'update', 'merging', 'test', 'refactoring', 'experiment']`  
+    - **<list (from)>**: _Where did you come from?:_ `['develop', 'beta', 'rc-branch', 'master', 'other']`  
+        - if **(from == other)**:  **<input (fromManual)>**: _Name of the parent branch:_  
+    - **<input (workflow)>**: _Job description:_   
+    - **<list (pushing)>**: _Do you want to PUSH automatically?_ `['yes','no']`  
 3. create commit from question and actual branch name in format:  
-```  
-<shortBranchName after '/' before second '-' >: <workflow> [<type> from <fromManual ?? from> ] (<actualBranchName>)  
-```  
+    ```  
+    <shortBranchName after '/' before second '-' >: <workflow> [<type> from <fromManual ?? from> ] (<actualBranchName>)  
+    ```  
 4. if **(pushing == yes)**: run auto command: `git push origin HEAD`  
   
 ## shortBranchName example  
