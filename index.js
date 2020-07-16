@@ -17,13 +17,26 @@ function prompter(cm, commit) {
             type: 'list',
             name: 'type',
             message: 'Type of operation?',
-            choices: ['task', 'bug', 'test', 'refactoring'],
+            choices: ['task', 'bug', 'fix', 'update', 'merging', 'test', 'refactoring', 'experiment'],
         },
         {
             type: 'list',
             name: 'from',
             message: 'Where did you come from?',
             choices: ['develop', 'beta', 'rc-branch', 'master', new inquirer.Separator(), 'other'],
+        },
+        {
+            type: 'input',
+            name: 'fromManual',
+            message: 'Name of the parent branch:',
+            when: (answers) => answers.from === 'other',
+            validate: function (input) {
+                if (!input) {
+                    return 'LOL ;) You really don\'t know where you came from?';
+                } else {
+                    return true;
+                }
+            }
         },
         {
             type: 'input',
@@ -37,6 +50,12 @@ function prompter(cm, commit) {
                 }
             }
         },
+        {
+            type: 'list',
+            name: 'pushing',
+            message: 'Do you want to PUSH automatically?',
+            choices: ['yes', 'no'],
+        },
     ]).then((answers) => {
         formatCommit(commit, answers);
     });
@@ -44,17 +63,33 @@ function prompter(cm, commit) {
 
 function formatCommit(commit, answers) {
     commit(filter([
-        branch.sync().split('/')[1],
+        shortBranch(),
         ': ',
         answers.workflow,
         ' [',
         answers.type,
         ' from ',
-        answers.from,
+        (answers.fromManual ? answers.fromManual : answers.from),
         '] (',
         branch.sync(),
         ')'
     ]).join(''));
+
+    if(answers.pushing === 'yes'){
+        git().push('origin', 'HEAD');
+    }
+}
+
+function shortBranch() {
+    var branchName = branch.sync();
+
+    if(branchName.includes("task/")){
+        var format = branchName.split('/')[1].split('-');
+
+        return format[0] + '-' + format[1];
+    }
+
+    return branchName;
 }
 
 function filter(array) {

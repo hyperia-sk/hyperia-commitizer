@@ -1,6 +1,6 @@
 {
   "name": "@hyperia/hyperia-commitizer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A commitizen adapter for Jira smart commits",
   "main": "index.js",
   "repository": {
@@ -12,7 +12,9 @@
     "commitizen adapter",
     "jira",
     "jira smart commit",
-    "hyperia"
+    "hyperia",
+    "git commit",
+    "git commit for jira"
   ],
   "author": "Ing. Ivan Kostolný <ivan.kostolny@hyperia.sk>",
   "license": "MIT",

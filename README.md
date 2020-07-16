@@ -40,15 +40,24 @@ npm i @hyperia/hyperia-commitizer
 
 after run:
 - auto run command: `git add -A`
-- question **<list (type)>**: _Type of operation:_ `['task', 'bug', 'test', 'refactoring']`
+- question **<list (type)>**: _Type of operation:_ `['task', 'bug', 'fix', 'update', 'merging', 'test', 'refactoring', 'experiment']`
 - question **<list (from)>**: _Where did you come from?:_ `['develop', 'beta', 'rc-branch', 'master', 'other']`
+- if **<list (from)> == other**: question **<input (fromManual)>**: _Name of the parent branch:_
 - question **<input (workflow)>**: _Job description:_
 - create commit from question and actual branch name in format:
 ```
-<actualBranchName after '/'>: <workflow> [<type> from <from>] (<actualBranchName>)
+<shortBranchName after '/' before second '-' >: <workflow> [<type> from <fromManual ?? from> ] (<actualBranchName>)
 ```
+## shortBranchName example
+- if actualBranchName contains `task/`
+  - actualBranchName: `task/JIRA-5555` => shortBranchName: `JIRA-5555`
+  - actualBranchName: `task/JIRA-5555-1` => shortBranchName: `JIRA-5555`
+- if actualBranchName do not contains `task/`
+  - actualBranchName: `rc-branch` => shortBranchName: `rc-branch`
+  - actualBranchName: `example-branch-name` => shortBranchName: `example-branch-name`
+  
 ## Example
-- actual branch: `task/JIRA-5555`
-- finnal commit: `JIRA-5555: Job description... [task from dev] (task/JIRA-5555)`
+- actual branch: `task/JIRA-5555-1`
+- finnal commit: `JIRA-5555: Job description... [task from dev] (task/JIRA-5555-1)`
 
 
