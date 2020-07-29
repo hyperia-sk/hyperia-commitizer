@@ -1,6 +1,6 @@
 {
   "name": "@hyperia/hyperia-commitizer",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A commitizen adapter for Jira smart commits",
   "main": "index.js",
   "repository": {
