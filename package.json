@@ -23,11 +23,17 @@
   },
   "homepage": "https://github.com/hyperia-sk/hyperia-commitizer",
   "dependencies": {
-    "lodash": "~4.17.19",
     "inquirer": "^7.3.3",
     "git-branch": "^2.0.1",
     "commitizen": "^4.1.2",
     "simple-git": "^2.15.0"
+  },
+  "devDependencies": {
+    "diff": ">=3.5.0",
+    "lodash": ">=4.17.19",
+    "braces": ">=2.3.1",
+    "minimatch": ">=3.0.2",
+    "growl": ">=1.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
