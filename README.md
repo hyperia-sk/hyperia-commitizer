@@ -27,7 +27,8 @@ npm i @hyperia/hyperia-commitizer
   
 ```json  
 {  
- "path": "node_modules/@hyperia/hyperia-commitizer"}  
+ "path": "node_modules/@hyperia/hyperia-commitizer"
+}  
 ```  
   
   
