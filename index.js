@@ -1,8 +1,8 @@
 'use strict';
 
 const inquirer = require('inquirer');
-const branch = require('git-branch');
 const git = require('simple-git');
+const branchName = require('current-git-branch');
 
 git().add('-A');
 
@@ -71,7 +71,7 @@ function formatCommit(commit, answers) {
         ' from ',
         (answers.fromManual ? answers.fromManual : answers.from),
         '] (',
-        branch.sync(),
+        branchName(),
         ')'
     ]).join(''));
 
@@ -81,15 +81,15 @@ function formatCommit(commit, answers) {
 }
 
 function shortBranch() {
-    var branchName = branch.sync();
+    var name = branchName();
 
-    if(branchName.includes("task/")){
-        var format = branchName.split('/')[1].split('-');
+    if(name.includes("task/")){
+        var format = name.split('/')[1].split('-');
 
         return format[0] + '-' + format[1];
     }
 
-    return branchName;
+    return name;
 }
 
 function filter(array) {

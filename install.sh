@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Installing git-branch Globally"
-npm install -g git-branch
+echo "Installing current-git-branch Globally"
+npm install -g current-git-branch --save
 
 echo "Installing simple-git Globally"
 npm install -g simple-git
