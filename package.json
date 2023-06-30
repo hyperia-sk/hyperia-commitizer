@@ -1,6 +1,6 @@
 {
   "name": "@hyperia/hyperia-commitizer",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A commitizen adapter for Jira smart commits",
   "main": "index.js",
   "repository": {
@@ -26,7 +26,7 @@
     "inquirer": "7.3.3",
     "current-git-branch": "1.1.0",
     "commitizen": "4.2.3",
-    "simple-git": "2.38.0"
+    "simple-git": "3.15.1"
   },
   "devDependencies": {
     "diff": ">=3.5.0",
