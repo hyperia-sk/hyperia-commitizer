@@ -23,7 +23,7 @@ function prompter(cm, commit) {
             type: 'list',
             name: 'from',
             message: 'Where did you come from?',
-            choices: ['develop', 'beta', 'rc-branch', 'master', new inquirer.Separator(), 'other'],
+            choices: ['master', 'beta', new inquirer.Separator(), 'other'],
         },
         {
             type: 'input',
