@@ -62,6 +62,8 @@ function prompter(cm, commit) {
 }
 
 function formatCommit(commit, answers) {
+    git().add('-A');
+
     commit(filter([
         shortBranch(),
         ': ',
@@ -76,7 +78,14 @@ function formatCommit(commit, answers) {
     ]).join(''));
 
     if(answers.pushing === 'yes'){
-        git().push('origin', 'HEAD');
+        git()
+            .push('origin', 'HEAD')
+            .then(() => {
+                console.log('\n\n    - - Pushing to Repo finished SUCCESSFULLY - -\n\n');
+            })
+            .catch((err) => {
+                console.error('\n\n    ! ! ! Pushing to Repo FAILED ! ! !\n\n\n', err);
+            });
     }
 }
 
