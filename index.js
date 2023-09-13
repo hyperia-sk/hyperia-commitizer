@@ -62,8 +62,6 @@ function prompter(cm, commit) {
 }
 
 function formatCommit(commit, answers) {
-    git().add('-A');
-
     commit(filter([
         shortBranch(),
         ': ',
