@@ -78,9 +78,8 @@ function formatCommit(commit, answers) {
 function shortBranch() {
     const name = branchName();
 
-    if (name.includes("task/")) {
-        const format = name.split('/')[1].split('-');
-        return format[0] + '-' + format[1];
+    if (name.includes("/")) {
+        return name.split('/')[1];
     }
 
     return name;
